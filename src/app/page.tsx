@@ -101,7 +101,7 @@ export default function Page() {
             <div className="flex items-center justify-between pb-8">
               <h2 className="text-2xl font-bold">Plan your booking</h2>
 
-              <CustomBtn className="sm:hidden" />
+              <CustomBtn className="sm:hidden gap-2.5" btnClass="w-6" />
             </div>
 
             <div
@@ -151,7 +151,7 @@ export default function Page() {
                 <p className="text-sm text-gray-400">When</p>
                 <div className="w-full flex items-center justify-between font-semibold tracking-wider">
                   <p>Thursday May 8, 2025</p>
-                  <p className="text-blue-500">Change</p>
+                  <p className="text-blue-500 max-sm:text-sm">Change</p>
                 </div>
               </div>
 
@@ -195,11 +195,13 @@ export default function Page() {
                   <LuChevronsUpDown className="size-5 font-semibold" />
                 </div>
 
-                <div className="w-1/2 flex items-end justify-between gap-x-12 text-gray-400">
+                <div className="w-1/2 flex items-end justify-between gap-x-12">
                   <div className="space-y-2">
-                    <p className="text-xs ">End time</p>
+                    <p className="text-xs text-gray-400">End time</p>
 
-                    <p className="tracking-wide text-[13px]">Select end time</p>
+                    <p className="text-xs text-gray-500 sm:text-sm font-semibold">
+                      Select end time
+                    </p>
                   </div>
 
                   <LuChevronsUpDown className="size-5 font-semibold text-gray-600" />
@@ -218,7 +220,7 @@ export default function Page() {
                       <HiChevronDown className="size-5 sm:hidden" />
                     </div>
 
-                    <div className="sm:hidden text-sm flex items-center gap-4">
+                    <div className="sm:hidden text-xs sm:text-sm flex items-center gap-3">
                       <p>Thursday </p>
                       <p>8:00 - 17:00</p>
                     </div>
@@ -285,7 +287,10 @@ export default function Page() {
                   id="check"
                   className="size-6 appearance-none rounded-md  border-2 checked:bg-blue-500 cursor-pointer"
                 />{" "}
-                <label htmlFor="check" className="text-base font-semibold">
+                <label
+                  htmlFor="check"
+                  className="text-sm sm:text-base font-semibold"
+                >
                   I am booking on behalf of someone else
                 </label>
               </div>
@@ -321,13 +326,19 @@ function GridItem({ largeText, smallText, className }: GridItemsProps) {
   );
 }
 
-function CustomBtn({ className }: { className?: string }) {
+function CustomBtn({
+  className,
+  btnClass,
+}: {
+  className?: string;
+  btnClass?: string;
+}) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       {[...Array(3)].map((_, index) => (
         <button
           key={index}
-          className={`h-1 w-8 rounded-full ${
+          className={`${btnClass} h-1 w-8 rounded-full ${
             index === 0 ? "bg-gray-500" : "bg-gray-200"
           }`}
         />
