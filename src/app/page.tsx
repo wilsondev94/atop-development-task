@@ -78,7 +78,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className=" w-[70%] h-full flex-1 sm:space-y-4 pt-12">
+      <section className=" w-[70%] h-full flex-1 sm:space-y-4 pt-4 sm:pt-12">
         <div className="w-full flex items-center justify-between px-4 max-sm:hidden">
           <button className="border text-sm text-gray-500 p-1 rounded-full font-semibold hover:text-gray-400 transition-all duration-300">
             <IoIosClose className="size-7" />
