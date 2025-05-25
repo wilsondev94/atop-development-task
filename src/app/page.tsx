@@ -89,7 +89,7 @@ export default function Page() {
               placeholder="maiaa.com"
               className="w-full h-10 bg-gray-200 px-6 rounded-full focus:outline-none placeholder:text-gray-500 placeholder:text-center placeholder:font-semibold"
             />
-            <button className="absolute   right-10 top-0 bottom-0 text-gray-400 hover:text-gray-500 transition-all duration-300">
+            <button className="absolute right-10 top-0 bottom-0 text-gray-400 hover:text-gray-500 transition-all duration-300">
               <CgSoftwareUpload className="size-6" />
             </button>
           </div>
@@ -99,9 +99,11 @@ export default function Page() {
           {/* BOOKING PLAN */}
           <div className="w-full">
             <div className="flex items-center justify-between pb-8">
-              <h2 className="text-2xl font-bold">Plan your booking</h2>
+              <h2 className="text-xl sm:text-2xl font-bold">
+                Plan your booking
+              </h2>
 
-              <CustomBtn className="sm:hidden gap-2.5" btnClass="w-6" />
+              <CustomBtn className="sm:hidden gap-2.5" btnClass="w-5" />
             </div>
 
             <div
@@ -185,26 +187,26 @@ export default function Page() {
                 </div>
               </div>
 
-              <div className="w-full flex items-end justify-between gap-6 border-b border-gray-200 pb-2">
-                <div className="w-1/2 flex items-end justify-between gap-x-12 ">
+              <div className="w-full grid grid-cols-2 gap-6 border-b border-gray-200 pb-2">
+                <div className="flex items-end justify-between">
                   <div className="space-y-2">
                     <p className="text-xs text-gray-400">Start time</p>
                     <p className="font-semibold">09:00</p>
                   </div>
 
-                  <LuChevronsUpDown className="size-5 font-semibold" />
+                  <LuChevronsUpDown className="size-5 text-gray-600" />
                 </div>
 
-                <div className="w-1/2 flex items-end justify-between gap-x-12">
-                  <div className="space-y-2">
+                <div className="flex items-end justify-between">
+                  <div className="space-y-2 w-full">
                     <p className="text-xs text-gray-400">End time</p>
 
-                    <p className="text-xs text-gray-500 sm:text-sm font-semibold">
+                    <p className="w-full text-sm text-gray-500 font-semibold">
                       Select end time
                     </p>
                   </div>
 
-                  <LuChevronsUpDown className="size-5 font-semibold text-gray-600" />
+                  <LuChevronsUpDown className="size-6 text-gray-600" />
                 </div>
               </div>
 
