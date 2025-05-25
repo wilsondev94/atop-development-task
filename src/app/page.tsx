@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 import { CgSoftwareUpload } from "react-icons/cg";
 import { FiArrowRight } from "react-icons/fi";
@@ -18,6 +21,8 @@ const days = [
 ];
 
 export default function Page() {
+  const [count, setCount] = useState(2);
+
   return (
     <div className="max-w-screen-2xl h-full mx-auto overflow-y-auto flex gap-2 text-gray-700 no-scrollbar">
       <section className="w-[30%] relative hidden lg:block overflow-hidden">
@@ -146,7 +151,7 @@ export default function Page() {
 
           {/* EVENT DETAILS */}
           <div className="w-full space-y-8">
-            <h3 className="text-xl font-bold">Event details</h3>
+            <h3 className="text-lg font-bold">Event details</h3>
 
             <div className="w-full flex flex-col gap-6 text-gray-600">
               <div className="w-full flex flex-col gap-2 border-b border-gray-200 pb-3">
@@ -174,12 +179,24 @@ export default function Page() {
                   <p className="w-fit text-sm text-gray-400">Guests</p>
 
                   <div className="w-full flex items-baseline justify-between font-medium">
-                    <p className="text-base text-gray-600 font-semibold">2</p>
+                    <p className="text-base text-gray-600 font-semibold">
+                      {count}
+                    </p>
                     <div className="space-x-2">
-                      <button className="text-lg font-semibold bg-slate-100 rounded-full p-1">
+                      <button
+                        className="text-lg font-semibold bg-slate-100 rounded-full p-1"
+                        onClick={() => {
+                          if (count > 1) {
+                            setCount((prevCount) => prevCount - 1);
+                          }
+                        }}
+                      >
                         <HiMiniMinus className="size-5 text-gray-500" />
                       </button>
-                      <button className="text-lg font-semibold bg-slate-100 rounded-full p-1">
+                      <button
+                        className="text-lg font-semibold bg-slate-100 rounded-full p-1"
+                        onClick={() => setCount((prevCount) => prevCount + 1)}
+                      >
                         <HiMiniPlus className="size-5 text-gray-500" />
                       </button>
                     </div>
@@ -259,27 +276,45 @@ export default function Page() {
               </div>
 
               <div className="w-full text-gray-400 pb-2 pt-6">
-                <p className="text-base border-b border-gray-200 pb-2">
-                  Comments or requests for the event
+                <p
+                  className="
+                text-gray-400 text-base border-b pb-2"
+                >
+                  Comments or requests for the event{" "}
                 </p>
-                <p className="text-gray-500 font-semibold text-sm pt-2">
-                  Share what you want out of your experience
-                </p>
+
+                <textarea
+                  placeholder="Share what you want out of your experience..."
+                  className="w-full sm:max-w-[70%] text-base text-gray-600 border border-gray-200 mt-3 py-2 px-3 focus:outline-none placeholder:text-gray-500 placeholder:text-sm placeholder:font-semibold rounded-md"
+                />
               </div>
             </div>
           </div>
 
           {/* ADDITIONAL INFORMATION */}
           <div className="space-y-12 pb-4">
-            <h3 className="text-xl font-bold">Additional information</h3>
+            <h3 className="text-lg font-bold">Additional information</h3>
 
             <div className="space-y-8">
               <div className="w-full border-b border-gray-200 pb-2 text-base">
-                <div className="w-full sm:w-2/3 flex flex-col items-start gap-10 sm:flex-row sm:items-center sm:justify-between text-gray-400">
-                  <p className="max-sm:w-full border-b pb-2  sm:border-none ">
-                    Company
-                  </p>
-                  <p>Contact number</p>
+                <div className="w-full md:w-[70%] flex flex-col items-start gap-10 md:flex-row md:items-center md:justify-between text-gray-400">
+                  <div className="w-full flex items-center gap-4 border-b pb-2 md:border-none">
+                    <label className="">Company</label>
+                    <input
+                      type="text"
+                      placeholder="Atop Web Technologies"
+                      className="rounded-md placeholder:text-xs py-1 px-2 focus:outline-none border text-sm placeholder:text-slate-300 text-gray-500"
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <label className="">Contact</label>
+                    <input
+                      type="text"
+                      placeholder="+234 80XXXXXXXX"
+                      className="rounded-md placeholder:text-xs py-1 px-2 focus:outline-none border text-sm placeholder:text-slate-300 text-gray-500"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -348,5 +383,3 @@ function CustomBtn({
     </div>
   );
 }
-
-// https://staging.maiaa.app/
