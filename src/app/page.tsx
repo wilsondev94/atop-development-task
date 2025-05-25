@@ -285,7 +285,7 @@ export default function Page() {
 
                 <textarea
                   placeholder="Share what you want out of your experience..."
-                  className="w-full sm:max-w-[70%] text-base text-gray-600 border border-gray-200 mt-3 py-2 px-3 focus:outline-none placeholder:text-gray-500 placeholder:text-sm placeholder:font-semibold rounded-md"
+                  className="w-full sm:max-w-[70%] text-base text-gray-600 border border-gray-200 mt-3 py-2 px-3 focus:outline-none placeholder:text-gray-500 placeholder:text-xs sm:placeholder:text-sm placeholder:font-semibold rounded-md resize-none"
                 />
               </div>
             </div>
